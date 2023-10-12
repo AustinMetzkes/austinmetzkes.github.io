@@ -82,7 +82,7 @@
 											</div>
 											<div class="cf-turnstile" data-sitekey="0x4AAAAAAALhOCYON0-xa85Y" data-callback="javascriptCallback"></div>
 											<div class="col-12">
-												<input type="submit" value="Send Message" />
+												<button type="button" onclick="handleFormSubmission()">Send Message</button>
 											</div>
 										</div>
 									</div>
@@ -106,21 +106,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+
 			<script>
 				window.onloadTurnstileCallback = function () {
 					turnstile.render('.cf-turnstile', {
-						sitekey: '0x4AAAAAAALhOCYON0-xa85Y',  // Use your actual sitekey here
+						sitekey: '0x4AAAAAAALhOCYON0-xa85Y',
 						callback: function(token) {
 							console.log(`Challenge Success ${token}`);
-							document.querySelector("form").submit();  // Programmatically submit the form
+							// Submit form after successful Recaptcha verification
+							document.querySelector("form").submit();
 						},
 					});
 				};
-			
-				document.querySelector("form").addEventListener("submit", function(e) {
-					e.preventDefault();  // Prevent form from submitting by default
-				});
-			</script> 
+
+				function handleFormSubmission() {
+					// Trigger the Cloudflare Recaptcha
+					turnstile.trigger('.cf-turnstile');
+				}
+			</script>
 
 	</body>
 </html>
