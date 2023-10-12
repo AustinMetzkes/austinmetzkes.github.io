@@ -109,21 +109,17 @@
 			<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 
 			<script>
-				window.onloadTurnstileCallback = function () {
+				function handleFormSubmission() {
+					console.log("Button clicked."); // Logging for testing
+			
+					// Render the captcha directly on button click
 					turnstile.render('.cf-turnstile', {
 						sitekey: '0x4AAAAAAALhOCYON0-xa85Y',
 						callback: function(token) {
 							console.log(`Challenge Success ${token}`);
-							// Submit form after successful Recaptcha verification
 							document.querySelector("form").submit();
 						},
 					});
-				};
-
-				function handleFormSubmission() {
-					console.log("Button clicked.");
-					// Trigger the Cloudflare Recaptcha
-					turnstile.trigger('.cf-turnstile');
 				}
 			</script>
 
