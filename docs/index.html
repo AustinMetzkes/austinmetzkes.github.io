@@ -80,9 +80,8 @@
 											<div class="col-12">
 												<textarea name="message" placeholder="Message" rows="6"></textarea>
 											</div>
-											<div class="cf-turnstile" data-sitekey="0x4AAAAAAALhOCYON0-xa85Y" data-callback="javascriptCallback"></div>
 											<div class="col-12">
-												<button type="button" onclick="handleFormSubmission()">Send Message</button> 
+												<input type="submit" value="Send Message" />
 											</div>
 										</div>
 									</div>
@@ -94,7 +93,7 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> 
+							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</div>
 
@@ -106,21 +105,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
- 
-			<script>
-				function handleFormSubmission() {
-					console.log("Button clicked."); // Logging for testing
-			
-					// Render the captcha directly on button click
-					turnstile.render('.cf-turnstile', {
-						sitekey: '0x4AAAAAAALhOCYON0-xa85Y',
-						callback: function(token) {
-							console.log(`Challenge Success ${token}`);
-							document.querySelector("form").submit();
-						},
-					});
-				}
-			</script> 
+
 
 	</body>
 </html>
