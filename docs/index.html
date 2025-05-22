@@ -13,28 +13,23 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<style>
-		/* Fix content overflow in panels */
-		.panel {
-			overflow: visible !important;
-		}
+	.panel.intro {
+		height: auto !important;
+		overflow: visible !important;
+	}
 
-		.content {
-			max-height: none !important;
-			overflow: visible !important;
-			padding-bottom: 2em;
-		}
+	.panel.intro .content {
+		height: auto !important;
+		overflow: visible !important;
+		display: block;
+	}
 
-		/* Optional: fix left/right split if it’s using flex or floats */
-		@media screen and (min-width: 768px) {
-			.panel > .content {
-			display: block !important;
-			}
-		}
-
-		/* Ensure the body/container can grow */
-		body, html {
-			height: auto !important;
-		}
+	/* Optional: Fix for some HTML5 UP skins using scroll-based animation panels */
+	body.is-preload #main > .panel {
+		display: block !important;
+		opacity: 1 !important;
+		transform: none !important;
+	}
 	</style>
 	<body class="is-preload">
 
@@ -58,12 +53,16 @@
 									<h1>Austin Metzkes</h1>
 									<p>Staff Security Engineer</p>
 								</header>
-								<div>
+
+								<div class="content">
 									<p>I’m a Staff Security Engineer with extensive experience in identity and access management (IAM), cloud security, and infrastructure automation. At Shipt, I lead initiatives to strengthen security across engineering teams, focusing on Okta, Auth0, Google Cloud, and PCI-DSS compliance.</p> 
+
 									<p>I specialize in building scalable, secure systems through automation with Terraform and have designed workflows for privileged access management using Delinea. I also mentor engineers, guide architectural decisions, and help drive secure development practices across the organization.</p>
+
 									<p>Whether it's simplifying complex security concepts or integrating tools into dynamic environments, I’m passionate about delivering clear, reliable solutions that empower both teams and users.</p>
 								</div>
 							</article>
+
 
 						<!-- Work -->
 							<article id="resume" class="panel">
