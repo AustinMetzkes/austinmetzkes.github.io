@@ -186,6 +186,28 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+	<style>
+	/* Add breathing room inside the right-hand panel content */
+	.panel.intro .content {
+		max-width: 48rem;     /* wider max content width */
+		margin: 0 auto;
+		padding: 2rem 2rem 3rem 2rem;  /* top, right, bottom, left padding */
+		line-height: 1.7;     /* improve readability */
+	}
 
+	/* Ensure outer container allows full content height */
+	.panel.intro {
+		height: auto !important;
+		overflow-y: auto !important;
+		padding-bottom: 3rem;
+	}
+
+	/* Prevent scrolling issues on smaller screens */
+	@media screen and (max-width: 736px) {
+		.panel.intro .content {
+		padding: 1.5rem;
+		}
+	}
+	</style>
 	</body>
 </html>
